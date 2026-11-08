@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b0b2c">
+  <title>Happy Diwali ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <div class="ambient-glow glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow glow-two" aria-hidden="true"></div>
+  <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+
+  <main class="page">
+    <section class="greeting-card">
+      <p class="eyebrow">A celebration of light, love & new beginnings</p>
+      <div class="diya" aria-hidden="true">🪔</div>
+      <h1>Happy Diwali</h1>
+      <p class="subtitle">Festival of Lights</p>
+      <div class="divider"></div>
+      <p class="message">
+        May the glow of every diya brighten your home, the colours of every
+        rangoli fill your days with joy, and this beautiful festival bring
+        peace, prosperity and countless reasons to smile.
+      </p>
+      <p class="wish">Wishing you and your family a sparkling Diwali!</p>
+      <p class="signature">WITH LIGHT & GOOD WISHES<br><span>शुभ दीपावली</span></p>
+
+      <button class="celebrate-button" id="celebrateButton" type="button">
+        <span aria-hidden="true">🎆</span> Launch Diwali Celebration <span aria-hidden="true">🎇</span>
+      </button>
+      <p class="button-hint">Tap the button and watch the night light up!</p>
+    </section>
+  </main>
+
+  <div class="celebration-message" id="celebrationMessage" aria-live="polite">
+    <span>✨</span>
+    <strong>HAPPY DIWALI!</strong>
+    <span>🪔</span>
+  </div>
+  <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+  <div class="footer">MAY YOUR WORLD ALWAYS SHINE BRIGHT</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

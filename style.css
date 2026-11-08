@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #ffdc91;
+  --cream: #fff5df;
+  --pink: #ffafc2;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--cream);
+  background: #180b29;
+  font-family: "Poppins", sans-serif;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(120deg, rgba(25, 8, 40, .84), rgba(49, 13, 49, .66), rgba(20, 11, 35, .82)),
+    url("assets/diwali-rangoli.jpg") center 45% / cover no-repeat;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/rangoli-mandala.jpg") center / min(78vw, 760px) no-repeat;
+  opacity: .13;
+  mix-blend-mode: screen;
+}
+
+.ambient-glow {
+  position: fixed;
+  z-index: -2;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(255, 174, 73, .15);
+  filter: blur(75px);
+  pointer-events: none;
+}
+
+.glow-one { top: -130px; left: -100px; }
+.glow-two {
+  right: -150px;
+  bottom: -100px;
+  background: rgba(244, 71, 137, .17);
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 34px 18px 70px;
+}
+
+.greeting-card {
+  position: relative;
+  width: min(760px, 100%);
+  padding: clamp(28px, 6vw, 58px);
+  text-align: center;
+  border: 1px solid rgba(255, 220, 151, .62);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(45, 16, 58, .82), rgba(27, 13, 43, .82));
+  box-shadow: 0 24px 90px rgba(0, 0, 0, .45), inset 0 0 35px rgba(255, 202, 112, .07);
+  backdrop-filter: blur(13px);
+  overflow: hidden;
+}
+
+.greeting-card::before,
+.greeting-card::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  opacity: .75;
+  font-size: 22px;
+}
+
+.greeting-card::before { top: 20px; left: 24px; }
+.greeting-card::after { bottom: 20px; right: 24px; }
+
+.eyebrow {
+  color: #ffdcaa;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  font-size: .72rem;
+}
+
+.diya {
+  margin: 8px 0 2px;
+  font-size: clamp(38px, 7vw, 58px);
+  filter: drop-shadow(0 0 15px rgba(255, 178, 62, .65));
+}
+
+h1 {
+  margin: 12px 0 8px;
+  color: #ffe5a6;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(2.7rem, 8vw, 5.4rem);
+  line-height: 1.08;
+  text-shadow: 0 3px 25px rgba(255, 166, 61, .28);
+}
+
+.subtitle {
+  color: #ffb4c5;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.05rem, 3vw, 1.45rem);
+  letter-spacing: .12em;
+}
+
+.divider {
+  width: 130px;
+  height: 1px;
+  margin: 26px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.message {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #fff3e2;
+  font-size: clamp(.95rem, 2.4vw, 1.08rem);
+  font-weight: 300;
+  line-height: 1.95;
+}
+
+.wish {
+  margin-top: 22px;
+  color: var(--gold);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.signature {
+  margin-top: 30px;
+  color: #ffd6a0;
+  font-size: .86rem;
+  letter-spacing: .08em;
+  line-height: 1.9;
+}
+
+.signature span {
+  color: #fff1d6;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.celebrate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 15px 24px;
+  border: 1px solid rgba(255, 236, 186, .9);
+  border-radius: 999px;
+  color: #35143e;
+  background: linear-gradient(110deg, #ffe6a7, #ffb66f, #ffc9a0);
+  box-shadow: 0 8px 28px rgba(255, 173, 83, .28);
+  font: 600 .95rem "Poppins", sans-serif;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.celebrate-button:hover {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow: 0 12px 34px rgba(255, 173, 83, .45);
+  filter: brightness(1.06);
+}
+
+.celebrate-button:active { transform: scale(.98); }
+.celebrate-button:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+.celebrate-button:disabled { cursor: wait; opacity: .8; }
+
+.button-hint {
+  margin: 10px 0 0;
+  color: rgba(255, 239, 211, .7);
+  font-size: .75rem;
+}
+
+.sparkle-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sparkle-layer i {
+  position: absolute;
+  bottom: -20px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffe6a0;
+  box-shadow: 0 0 12px 3px rgba(255, 205, 113, .65);
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  from { transform: translateY(0) scale(.5); opacity: 0; }
+  15% { opacity: 1; }
+  to { transform: translateY(-110vh) scale(1.3); opacity: 0; }
+}
+
+#fireworksCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.celebration-message {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: 94vw;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 18px);
+  padding: 18px clamp(16px, 4vw, 34px);
+  border: 1px solid rgba(255, 226, 157, .9);
+  border-radius: 18px;
+  color: #fff0b8;
+  background: rgba(36, 11, 47, .82);
+  box-shadow: 0 0 45px rgba(255, 188, 78, .55);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(1.2rem, 5vw, 2.6rem);
+  letter-spacing: .06em;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -35%) scale(.7);
+  transition: opacity .45s ease, transform .45s ease, visibility .45s;
+  pointer-events: none;
+}
+
+.celebration-message.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 13px;
+  left: 0;
+  z-index: 2;
+  color: rgba(255, 238, 208, .65);
+  font-size: .68rem;
+  letter-spacing: .16em;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .greeting-card { border-radius: 22px; padding: 34px 23px; }
+  .eyebrow { letter-spacing: .15em; }
+  .message { line-height: 1.8; }
+  .celebrate-button { padding: 14px 17px; font-size: .82rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle-layer i { animation: none; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
